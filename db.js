@@ -1,4 +1,4 @@
-use ("SportsBase")
+use("SportsBase")
 
 db.createCollection("sportFacilities")
 db.createCollection("athletes")
@@ -119,11 +119,11 @@ db.athletes.insertMany([
     }
 ])
 
-const proFitness = db.sportsFacilities.findOne({ name: "ProFitness" })._id
-const kemDush7 = db.sportsFacilities.findOne({ name: "МАУДО СШ №7" })._id
-const himik = db.sportsFacilities.findOne({ name: "Химик" })._id
-const tennis42 = db.sportsFacilities.findOne({ name: "Куzбасс" })._id
-const lazurniy = db.sportsFacilities.findOne({ name: "Лазурный" })._id
+const proFitness = db.sportsFacilities.findOne({name: "ProFitness"})._id
+const kemDush7 = db.sportsFacilities.findOne({name: "МАУДО СШ №7"})._id
+const himik = db.sportsFacilities.findOne({name: "Химик"})._id
+const tennis42 = db.sportsFacilities.findOne({name: "Куzбасс"})._id
+const lazurniy = db.sportsFacilities.findOne({name: "Лазурный"})._id
 
 db.competitions.insertMany([
     {
@@ -163,17 +163,17 @@ db.competitions.insertMany([
     }
 ])
 
-const egorNefedov = db.athletes.findOne({ firstName: "Егор", lastName: "Нефедов" })._id
-const ekaterinaVolkova = db.athletes.findOne({ firstName: "Екатерина", lastName: "Волкова" })._id
-const maksimLebedev = db.athletes.findOne({ firstName: "Максим", lastName: "Лебедев" })._id
-const olgaSmirnova = db.athletes.findOne({ firstName: "Ольга", lastName: "Смирнова" })._id
-const nikolayKozlov = db.athletes.findOne({ firstName: "Николай", lastName: "Козлов" })._id
+const egorNefedov = db.athletes.findOne({firstName: "Егор", lastName: "Нефедов"})._id
+const ekaterinaVolkova = db.athletes.findOne({firstName: "Екатерина", lastName: "Волкова"})._id
+const maksimLebedev = db.athletes.findOne({firstName: "Максим", lastName: "Лебедев"})._id
+const olgaSmirnova = db.athletes.findOne({firstName: "Ольга", lastName: "Смирнова"})._id
+const nikolayKozlov = db.athletes.findOne({firstName: "Николай", lastName: "Козлов"})._id
 
-const universityBasketballCup = db.competitions.findOne({ name: "Кубок Универа по баскетболу" })._id
-const summerSwimmingChampionship = db.competitions.findOne({ name: "Летний чемпионат по плаванию" })._id
-const winterTennisTournament = db.competitions.findOne({ name: "Зимний теннисный турнир" })._id
-const openSoccerCup = db.competitions.findOne({ name: "Открытый кубок по футболу" })._id
-const cityVolleyballTournament = db.competitions.findOne({ name: "Городской турнир по волейболу" })._id
+const universityBasketballCup = db.competitions.findOne({name: "Кубок Универа по баскетболу"})._id
+const summerSwimmingChampionship = db.competitions.findOne({name: "Летний чемпионат по плаванию"})._id
+const winterTennisTournament = db.competitions.findOne({name: "Зимний теннисный турнир"})._id
+const openSoccerCup = db.competitions.findOne({name: "Открытый кубок по футболу"})._id
+const cityVolleyballTournament = db.competitions.findOne({name: "Городской турнир по волейболу"})._id
 
 db.participations.insertMany([
     {
@@ -207,3 +207,8 @@ db.participations.insertMany([
         place: 3
     }
 ])
+
+db.sportsFacilities.find()
+db.athletes.find()
+db.competitions.find()
+db.participations.find()
