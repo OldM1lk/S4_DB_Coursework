@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Редактировать документ</title>
+</head>
+<body>
+<h1>Редактировать документ в <%= collection %></h1>
+<form action="/<%= collection %>/edit/<%= doc._id %>" method="POST">
+  <% for (let key in doc.toObject()) {
+  if (key !== '_id' && key !== '__v') { %>
+    <label><%= key %>:</label>
+    <input type="text" name="<%= key %>" value="<%= doc[key] %>"><br><br>
+  <% }} %>
+  <button type="submit">Сохранить изменения</button>
+</form>
+<br>
+<a href="/<%= collection %>">← Назад</a>
+</body>
+</html>

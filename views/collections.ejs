@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Коллекции</title>
+</head>
+<body>
+<h1>Список коллекций</h1>
+<ul>
+    <% collections.forEach(name => { %>
+        <li><a href="/<%= name %>"><%= name %></a></li>
+    <% }) %>
+</ul>
+</body>
+</html>

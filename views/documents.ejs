@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<%
+function getNestedValue(obj, path) {
+    return path.split('.').reduce((acc, part) => acc && acc[part], obj);
+}
+%>
+<head>
+    <title>Документы из коллекции <%= collection %></title>
+</head>
+<body>
+<h1>Коллекция: <%= collection %></h1>
+<a href="/<%= collection %>/add">Добавить новый документ</a>
+<table border="1" cellpadding="5">
+    <thead>
+    <tr>
+        <% fields.forEach(f => { %>
+            <th><%= f %></th>
+        <% }) %>
+        <th>Действия</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% data.forEach(doc => { %>
+        <tr>
+            <% fields.forEach(f => { %>
+                <td>
+                    <%= getNestedValue(doc, f) %>
+                </td>
+            <% }) %>
+            <td>
+                <a href="/<%= collection %>/edit/<%= doc._id %>">Изменить</a>
+                <form action="/<%= collection %>/delete/<%= doc._id %>" method="POST" style="display:inline;">
+                    <button type="submit" onclick="return confirm('Удалить документ?')">Удалить</button>
+                </form>
+            </td>
+        </tr>
+    <% }) %>
+    </tbody>
+</table>
+<br>
+<a href="/">← Назад к коллекциям</a>
+</body>
+</html>

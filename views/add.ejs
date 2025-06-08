@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Добавить документ в <%= collection %></title>
+</head>
+<body>
+<h1>Добавить документ в <%= collection %></h1>
+<form action="/<%= collection %>/add" method="POST">
+  <% fields.forEach(f => { if (f !== '_id' && f !== '__v') { %>
+    <label><%= f %>:</label>
+    <input type="text" name="<%= f %>"><br><br>
+  <% }}) %>
+  <button type="submit">Сохранить</button>
+</form>
+<br>
+<a href="/<%= collection %>">← Назад</a>
+</body>
+</html>
